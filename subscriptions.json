@@ -1,0 +1,3 @@
+{
+  "email:sendMail": ["http://localhost:9502/api/email/sendMail"]
+}

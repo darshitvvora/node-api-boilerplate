@@ -1,0 +1,6 @@
+{
+  "detectObjects": false,
+  "enforceConst":  false,
+  "ignore":        [0, 1], // Use empty array to disable ignore
+  "reporter":      "detailed"
+}

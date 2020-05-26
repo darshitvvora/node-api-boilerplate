@@ -1,0 +1,30 @@
+{
+  "env": {
+      // allow NodeJs global variables and NodeJS scoping
+      "node": true,
+      // allow use of ES6 globals such as Set
+      "es6": true
+  },
+  "extends": [
+    "airbnb/base",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["prettier"],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    // allow use of Ecmascript modules
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  // "globals": {
+  //  "describe": true,
+  //  "it": true
+  // },
+  "rules": {
+    "new-cap": "off",
+    "prettier/prettier": "error",
+    "max-len": ["error", 80]
+  }
+}
