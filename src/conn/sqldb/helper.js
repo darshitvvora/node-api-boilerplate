@@ -41,9 +41,7 @@ module.exports = {
     if (type.includes('u')) {
       options.updated_on = {
         type: Sequelize.DATE,
-        defaultValue: sequelize.literal(
-          'CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP',
-        ),
+        defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
       };
     }
 

@@ -38,14 +38,11 @@ process.on('uncaughtException', (err) => {
 
 db.sequelizeDB
   .authenticate()
-  .then((d) => {
-    // eslint-disable-next-line no-console
-    console.log(`Worked ${d}`);
-  })
+  .then(startServer)
   .catch((err) => {
     // eslint-disable-next-line no-console
     console.log('Server failed to start due to error: %s', err);
   });
-startServer();
+
 // Expose app
 module.exports = app;

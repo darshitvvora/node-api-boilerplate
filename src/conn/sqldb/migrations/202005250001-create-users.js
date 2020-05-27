@@ -1,4 +1,4 @@
-const { engine, timestamps, properties, keys } = require('../helper.js');
+const { engine, timestamps, properties } = require('../helper.js');
 
 module.exports = {
   up(queryInterface, DataTypes) {
@@ -7,9 +7,6 @@ module.exports = {
       Object.assign(
         properties('user', DataTypes),
         timestamps(['c', 'u', 'd'], DataTypes),
-        {
-          client_id: keys('clients'),
-        },
       ),
       engine,
     );

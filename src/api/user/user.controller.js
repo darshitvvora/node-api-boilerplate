@@ -1,15 +1,19 @@
-// const service = require('./user.service');
+const service = require('./user.service');
 const db = require('../../conn/sqldb');
 
 // const { BUCKET } = require('../../config/environment');
+const messagesMap = {
+  201: 'Your account created successfully.',
+  409: 'Duplicate',
+};
 
 const { User } = db;
 
 async function create(req, res, next) {
   try {
-    // const status = await service.checkDuplicate(req.body);
+    const status = await service.signup(req.body);
 
-    return res.json({ message: 'messagesMap[status.code]', id: 200 });
+    return res.json({ message: messagesMap[status.code], id: status.id });
   } catch (err) {
     return next(err);
   }
@@ -17,7 +21,7 @@ async function create(req, res, next) {
 
 async function index(req, res, next) {
   try {
-    const limit = 2000;
+    const limit = 100;
     const offset = 0;
 
     const users = await User.findAll({
@@ -45,19 +49,8 @@ async function getUser(req, res, next) {
 }
 
 async function updateUser(req, res, next) {
-  const PRECONDITION_FAILED = 412;
   const SUCCESS = 200;
   try {
-    const user = await User.findByPk(req.params.id, {
-      attributes: ['is_editable'],
-    });
-
-    if (!user.is_editable) {
-      return res.status(PRECONDITION_FAILED).json({
-        message: "You can'nt edit this user",
-      });
-    }
-
     await User.update(
       {
         ...req.body,
