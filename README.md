@@ -1,12 +1,12 @@
 # NodeJS REST API BoilerPlate
 
-Node API Boilerplate can be used to start a new NodeJS Postgres based backend REST API project. This is best suitable for small microservices as well as large scale monolith API
+Node API Boilerplate can be used to start a new NodeJS PostgresSQL based backend REST API project. This is best suitable for small microservices as well as large scale monolith API
 
 ## Technologies Used
 - [NodeJS >=12.16.3](https://nodejs.org/en/)
 - [NPM >=6.14.4](https://www.npmjs.com/)
 - [Git](https://git-scm.com/)
-- [Postgres](https://www.postgresql.org/)
+- [PostgresSQL](https://www.postgresql.org/)
 - [ElasticSearch](https://www.elastic.co/)
 - [Sequelize ORM](https://sequelize.org/)
 
@@ -80,6 +80,9 @@ Please make sure to write proper commit message and test before raising a PR
 - [Git Commit guidelines](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines)
 - [buddy.js](https://www.npmjs.com/package/buddy.js)
 - [husky](https://www.npmjs.com/package/husky)
+- [helmetjs](https://helmetjs.github.io/)
+- [winston](https://www.npmjs.com/package/winston)
+- [winston-elasticsearch](https://www.npmjs.com/package/winston-elasticsearch)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
