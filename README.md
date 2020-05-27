@@ -63,6 +63,7 @@ npm start
 - [x] Helmet and other security middleware integration
 - [x] Code Quality and sanity workflow integration (editorconfig, eslint, prettier, husky, commitizen, buddy.js)
 - [x] ELK logger component integration
+- [ ] Unit Testing integration (Chai + Mocha)
 - [ ] JSDoc integration
 - [ ] Docker integration
 
