@@ -1,6 +1,3 @@
-/**
- * Main application routes
- */
 const errors = require('./components/errors');
 const { name, version } = require('../package.json');
 const logger = require('./components/logger');

@@ -1,7 +1,3 @@
-/**
- * Main application file
- */
-
 const express = require('express');
 const http = require('http');
 

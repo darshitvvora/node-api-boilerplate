@@ -1,3 +1,12 @@
+/**
+ *  @fileOverview Provides logger support FS, console and ELK integration
+ *  @module       Logger
+ *  @author       Darshit Vora
+ *  @requires     NPM:winston
+ *  @requires     NPM.winston-daily-rotate-file
+ *  @requires     NPM.winston-elasticsearch
+ *  @requires     NPM.@elastic/elasticsearch
+ */
 const winston = require('winston');
 const DailyRotateFile = require('winston-daily-rotate-file');
 const Elasticsearch = require('winston-elasticsearch');
