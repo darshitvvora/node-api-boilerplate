@@ -64,7 +64,7 @@ npm start
 - [x] Code Quality and sanity workflow integration (editorconfig, eslint, prettier, husky, commitizen, buddy.js)
 - [x] ELK logger component integration
 - [ ] Unit Testing integration (Chai + Mocha)
-- [ ] JSDoc integration
+- [x] JSDoc integration
 - [ ] Docker integration
 
 ## Contributing
