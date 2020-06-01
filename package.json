@@ -13,7 +13,7 @@
     "pretty": "./node_modules/.bin/prettier --write ",
     "buddy": "./node_modules/.bin/buddy ",
     "generate-js-docs": "./node_modules/.bin/jsdoc -c jsdoc.json ",
-    "doc": "./node_modules/.bin/apidoc -i src/ -o apidoc/  "
+    "doc": "./node_modules/.bin/apidoc -i src/ -o docs/  "
   },
   "keywords": [
     "nodejs",
