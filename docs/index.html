@@ -29,7 +29,7 @@
     
     <input type="text" id="nav-search" placeholder="Search" />
     
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-ErrorModule.html">ErrorModule</a></li><li><a href="module-Logger.html">Logger</a></li><li><a href="module-User.html">User</a></li></ul><h3>Classes</h3><ul><li><a href="User_Controller.html">User\Controller</a><ul class='methods'></ul></li><li><a href="User_Hookshot.html">User\Hookshot</a><ul class='methods'></ul></li><li><a href="User_Model.html">User\Model</a></li><li><a href="User_Schema.html">User\Schema</a></li><li><a href="User_Service.html">User\Service</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#create">create</a></li><li><a href="global.html#getUser">getUser</a></li><li><a href="global.html#index">index</a></li><li><a href="global.html#update">update</a></li></ul>
 </nav>
 
 <div id="main">
@@ -58,97 +58,6 @@
 
 
 
-    <section class="readme usertext">
-        <article><h1>NodeJS REST API BoilerPlate</h1>
-<p>Node API Boilerplate can be used to start a new NodeJS PostgresSQL based backend REST API project. This is best suitable for small microservices as well as large scale monolith API</p>
-<h2>Technologies Used</h2>
-<ul>
-<li><a href="https://nodejs.org/en/">NodeJS &gt;=12.16.3</a></li>
-<li><a href="https://www.npmjs.com/">NPM &gt;=6.14.4</a></li>
-<li><a href="https://git-scm.com/">Git</a></li>
-<li><a href="https://www.postgresql.org/">PostgresSQL</a></li>
-<li><a href="https://www.elastic.co/">ElasticSearch</a></li>
-<li><a href="https://sequelize.org/">Sequelize ORM</a></li>
-</ul>
-<h2>Pre Requisite</h2>
-<ul>
-<li>Install NodeJS. Recommended to use <a href="https://github.com/nvm-sh/nvm">NVM</a></li>
-<li>Install PostgresSQL for Backend DB</li>
-<li>Install ElasticSearch (ELK) for Logging. The recommended way to do is using <a href="https://www.docker.com/products/docker-desktop">docker</a>. Follow these steps for installing on <a href="https://logz.io/blog/elk-stack-on-docker/">local</a></li>
-</ul>
-<h2>Installation</h2>
-<p>Use the node package manager <a href="https://www.npmjs.com/">npm</a> to install a boilerplate.</p>
-<pre class="prettyprint source lang-bash"><code>git clone git@github.com:darshitvvora/node-api-boilerplate.git
-# Create .env and add config
-cp sample.env .env
-npm i
-npm run migrate
-npm start
-</code></pre>
-<h2>Usage</h2>
-<ul>
-<li>Add resource and corresponding rest API using below steps
-<ul>
-<li>To create API, you will have to focus only on src/api folder</li>
-<li>Make sure to use REST resource structure standards and add standard API</li>
-<li>Add route in <code>index.js</code> of resource folder</li>
-<li>Add model and properties as per backend table structure in <code>.model.js</code> and <code>.properties.js</code> (Use sample user resource for reference)</li>
-<li>Add migration if its a new folder. Migration will use <code>.properties.js</code> file</li>
-<li>Use the <code>.controller.js</code> to call logical function</li>
-<li>Add pure logical function code in <code>.service.js</code></li>
-<li>Add fanout service in <code>.hookshot.js</code> file</li>
-<li>Add common function model-specific function as class methods in <code>.model.js</code></li>
-</ul>
-</li>
-<li>Use the below steps to commit and push the code to your repo
-<ul>
-<li>Stage the files to be committed</li>
-</ul>
-<pre class="prettyprint source lang-bash"><code>  git add .
-</code></pre>
-</li>
-<li>Commit file, fix any errors reported, and add a proper commit message. Use <code>.gitmessage</code> file for commit message guidelines<pre class="prettyprint source lang-bash"><code>  git commit
-</code></pre>
-</li>
-<li>Push file and create PR<pre class="prettyprint source lang-bash"><code>  git push
-</code></pre>
-</li>
-</ul>
-<h2>Roadmap</h2>
-<ul>
-<li>[x] Folder structure</li>
-<li>[x] Express configuration</li>
-<li>[x] Postgres integration</li>
-<li>[x] Sequelize ORM integration</li>
-<li>[x] Sequelize Migration integration</li>
-<li>[x] Helmet and other security middleware integration</li>
-<li>[x] Code Quality and sanity workflow integration (editorconfig, eslint, prettier, husky, commitizen, buddy.js)</li>
-<li>[x] ELK logger component integration</li>
-<li>[ ] Unit Testing integration (Chai + Mocha)</li>
-<li>[x] JSDoc integration</li>
-<li>[ ] Docker integration</li>
-</ul>
-<h2>Contributing</h2>
-<p>Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.</p>
-<p>Please make sure to write proper commit message and test before raising a PR</p>
-<h2>References</h2>
-<ul>
-<li><a href="https://github.com/angular-fullstack/generator-angular-fullstack">Angular Fullstack</a></li>
-<li><a href="https://sequelize.org/">Sequelize ORM</a></li>
-<li><a href="https://www.npmjs.com/package/node-webhooks">Node Webhooks</a></li>
-<li><a href="https://github.com/commitizen/cz-cli">Commitizen</a></li>
-<li><a href="https://www.npmjs.com/package/eslint-config-airbnb">ESLint</a></li>
-<li><a href="https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines">Git Commit guidelines</a></li>
-<li><a href="https://www.npmjs.com/package/buddy.js">buddy.js</a></li>
-<li><a href="https://www.npmjs.com/package/husky">husky</a></li>
-<li><a href="https://helmetjs.github.io/">helmetjs</a></li>
-<li><a href="https://www.npmjs.com/package/winston">winston</a></li>
-<li><a href="https://www.npmjs.com/package/winston-elasticsearch">winston-elasticsearch</a></li>
-</ul>
-<h2>License</h2>
-<p><a href="https://choosealicense.com/licenses/mit/">MIT</a></p></article>
-    </section>
-
 
 
 
@@ -161,7 +70,7 @@ npm start
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Fri May 29 2020 17:16:44 GMT+0530 (India Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Mon Jun 01 2020 15:36:14 GMT+0530 (India Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

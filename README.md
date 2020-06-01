@@ -63,7 +63,7 @@ npm start
 - [x] Helmet and other security middleware integration
 - [x] Code Quality and sanity workflow integration (editorconfig, eslint, prettier, husky, commitizen, buddy.js)
 - [x] ELK logger component integration
-- [ ] Unit Testing integration (Chai + Mocha)
+- [x] Unit Testing integration (Chai + Mocha)
 - [x] JSDoc integration
 - [ ] Docker integration
 
@@ -84,6 +84,8 @@ Please make sure to write proper commit message and test before raising a PR
 - [helmetjs](https://helmetjs.github.io/)
 - [winston](https://www.npmjs.com/package/winston)
 - [winston-elasticsearch](https://www.npmjs.com/package/winston-elasticsearch)
+- [jsdoc] (https://jsdoc.app/)
+- [BDD and TDD Approach] - (https://medium.com/quick-code/using-mocha-for-test-driven-development-in-building-api-with-node-express-c9331cd6171f)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

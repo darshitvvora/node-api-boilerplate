@@ -1,0 +1,10 @@
+{
+  "name": "NodeJS-API-Boilerplate",
+  "version": "0.0.1",
+  "description": "Api docs of NodeJS-API-Boilerplate",
+  "title": "NodeJS-API-Boilerplate",
+  "url" : "http://localhost:9015/apidocs",
+  "template": {
+    "forceLanguage": "en"
+  }
+}
