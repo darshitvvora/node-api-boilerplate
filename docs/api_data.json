@@ -128,7 +128,7 @@
       "examples": [
         {
           "title": "Header-Example:",
-          "content": "{\n \"AUTHORIZATION\": \"JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ\"\n}",
+          "content": "{\n \"AUTHORIZATION\": \"JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey\"\n}",
           "type": "json"
         }
       ]
