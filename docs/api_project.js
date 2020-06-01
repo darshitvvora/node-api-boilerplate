@@ -1,4 +1,4 @@
-{
+define({
   "name": "NodeJS-API-Boilerplate",
   "version": "0.0.1",
   "description": "Api docs of NodeJS-API-Boilerplate",
@@ -12,8 +12,8 @@
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2020-06-01T10:06:15.820Z",
+    "time": "2020-06-01T10:12:02.156Z",
     "url": "http://apidocjs.com",
     "version": "0.23.0"
   }
-}
+});

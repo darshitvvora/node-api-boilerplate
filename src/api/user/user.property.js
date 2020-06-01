@@ -1,11 +1,3 @@
-/**
- * @fileoverview  User DB Schema
- * @author Darshit Vora
- * @class User\Schema
- * @extends User
- * @version 0.0.1
- * @return {Object} User schema object
- */
 module.exports = (DataTypes) => ({
   id: {
     type: DataTypes.INTEGER,

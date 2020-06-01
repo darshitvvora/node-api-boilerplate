@@ -1,10 +1,3 @@
-/**
- * @fileoverview Sequelize User Model
- * @author Darshit Vora
- * @class User\Model
- * @extends User
- * @return {User}
- */
 const properties = require('./user.property');
 // const { USER_ROLES } = require('../../config/buckets');
 
