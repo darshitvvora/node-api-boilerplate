@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '.env') });
+
+const program = require('commander');
+
+let cron;
+let main;
+program
+  .version('0.0.1')
+  .usage('<cmd> [options]')
+  .arguments('<cmd> [command]')
+  .action((cmd, command = 'main') => ([cron, main] = [cmd, command]))
+  .parse(process.argv);
+
+if (!cron) {
+  program.outputHelp();
+  process.exit(1);
+}
+
+const Task = require(`./src/crons/${cron}`);
+new Task()[main]().then(() => process.exit(0), () => process.exit(1));
