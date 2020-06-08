@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  url-shortener:
+    container_name: node-api-boilerplate
+    restart: always
+    build: .
+    env_file: .env
+    volumes:
+      - '${LOG_VOLUME}:/usr/src/node-api-boilerplate/logs'
+    ports:
+      -  '${PORT}:${PORT}'
