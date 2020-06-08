@@ -1,0 +1,10 @@
+const app = require('./src/app');
+
+after(function() {
+  return Promise.all([
+    // Add any promises here for processes that need to be closed before the tests can finish
+
+
+
+  ]);
+});
