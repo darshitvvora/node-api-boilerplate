@@ -65,7 +65,7 @@ npm start
 - [x] ELK logger component integration
 - [x] Unit Testing integration (Chai + Mocha)
 - [x] JSDoc integration
-- [ ] Docker integration
+- [x] Docker integration
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
