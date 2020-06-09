@@ -34,10 +34,12 @@ const logger = winston.createLogger({
       filename: `../../../logs/error.%DATE%.log`,
       level: 'error',
       maxFiles: '10d',
+      silent: NODE_ENV === 'test',
     }),
     new Elasticsearch({
       client: NODE_ENV === 'production' && client,
       level: 'info',
+      silent: NODE_ENV === 'test',
     }),
     new winston.transports.Console({
       name: 'console',

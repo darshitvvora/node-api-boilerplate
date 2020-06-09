@@ -4,7 +4,7 @@
   "description": "A boilerplate for NodeJS REST API's",
   "main": "./src/index.js",
   "scripts": {
-    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha --timeout 5000 --require ./mocha.conf.js ./src/api/*/*.test.js mocha.global.js",
+    "test": "NODE_ENV=test PORT=8000 ./node_modules/.bin/nyc ./node_modules/.bin/mocha --timeout 5000 --require ./mocha.conf.js ./src/api/*/*.test.js mocha.global.js",
     "debug": "node --nolazy --inspect-brk=9229 ./src/index",
     "start": "nodemon ./src/index",
     "clear-db": "sequelize db:drop; sequelize db:create",
@@ -75,12 +75,12 @@
   "husky": {
     "hooks": {
       "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
-      "pre-commit": "npm run test && npm audit && lint-staged",
+      "pre-commit": "npm audit && lint-staged",
       "pre-push": "npm run lint"
     }
   },
   "lint-staged": {
-    "src/**/*.js": [
+    "src/**/!(*.test).js": [
       "npm run buddy",
       "npm run pretty",
       "npm run lint:fix",
