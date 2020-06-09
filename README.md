@@ -67,6 +67,9 @@ npm start
 - [x] JSDoc integration
 - [x] Docker integration
 
+## Coding Guidelines
+- [Variable Naming](https://github.com/kettanaito/naming-cheatsheet)
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
