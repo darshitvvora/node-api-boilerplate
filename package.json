@@ -48,7 +48,7 @@
     "winston": "^3.2.1",
     "winston-daily-rotate-file": "^4.4.2",
     "winston-elasticsearch": "0.7.0",
-    "winston-raven-sentry": "^1.0.1"
+    "winston-sentry": "^0.2.1"
   },
   "devDependencies": {
     "apidoc": "^0.23.0",

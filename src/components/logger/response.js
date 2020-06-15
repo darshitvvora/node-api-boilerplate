@@ -1,12 +1,12 @@
-const logger = require('./index')
+const logger = require('./index');
+const { APP_NAME } = require('../../config/environment');
 
 module.exports = function responseLogger() {
-
   return (req, res, next) => {
     res.on('finish', () => {
-      logger.info(`RESPONSE INFO: ${req.get('X-Request-Id')}`, {
+      logger.info(`RESPONSE INFO: ${res.get('X-Request-Id')}`, {
         startTime: new Date(),
-        requestId: req.get('X-Request-Id'),
+        requestId: res.get('X-Request-Id'),
         url: req.originalUrl,
         method: req.method,
         requestHeader: req.headers,
@@ -15,10 +15,10 @@ module.exports = function responseLogger() {
         requestParams: req.params,
         requestBody: req.body,
         requestQuery: req.query,
+        appName: APP_NAME,
       });
     });
 
     next();
   };
 };
-

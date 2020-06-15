@@ -11,19 +11,18 @@ module.exports = (app) => {
   const NOT_FOUND = 404;
   // Insert routes below
   app.use(requestLogger);
-  app.use(responseLogger);
+  app.use(responseLogger());
 
-  app.get('/api/health', (req, res) => res.json({ name, version }));
+  app.get('/api/health', (req, res) => res.json({ id: req.id, name, version }));
   app.use('/api/users', userRoute);
 
-
-  app.use(logger.transports.sentry.raven.errorHandler());
+  // app.use(logger.transports.sentry.raven.errorHandler());
 
   // All undefined asset or api routes should rgit eturn a 404
   // eslint-disable-next-line no-unused-vars
   app.use((e, req, res, next) => {
     logger.error(`ERROR: ${e.message}`, {
-      processingTime: res.get('X-Response-Time').replace('ms', ''),
+      processingTime: res.get('X-Response-Time'),
       url: req.originalUrl,
       stackTrace: e.stack,
       method: req.method,

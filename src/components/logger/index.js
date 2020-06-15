@@ -11,14 +11,14 @@ const winston = require('winston');
 const DailyRotateFile = require('winston-daily-rotate-file');
 const Elasticsearch = require('winston-elasticsearch');
 const { Client } = require('@elastic/elasticsearch');
-const Sentry = require('winston-raven-sentry');
+const Sentry = require('winston-sentry');
 
 const {
   NODE_ENV,
   ES_URL,
   ES_USER,
   ES_PASS,
-  SENTRY_DSN
+  SENTRY_DSN,
 } = require('../../config/environment');
 
 const client = new Client({
@@ -39,12 +39,12 @@ const logger = winston.createLogger({
       silent: NODE_ENV === 'test',
     }),
     new Elasticsearch({
-      client: NODE_ENV === 'production' && client,
+      client: NODE_ENV === client,
       level: 'info',
       silent: NODE_ENV === 'test',
     }),
     new Sentry({
-      dsn: NODE_ENV === 'production' && SENTRY_DSN,
+      dsn: NODE_ENV === SENTRY_DSN,
       install: true,
       config: { environment: NODE_ENV, release: '@@_RELEASE_' },
       level: 'warn',
