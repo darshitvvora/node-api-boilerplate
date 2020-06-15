@@ -1,14 +1,23 @@
 const errors = require('./components/errors');
 const { name, version } = require('../package.json');
-const logger = require('./components/logger');
+const logger = require('./components/logger/index');
+const { requestLogger } = require('./components/logger/request');
+const responseLogger = require('./components/logger/response');
+
 const userRoute = require('./api/user');
 
 module.exports = (app) => {
   const INTERNAL_SERVER_ERROR = 500;
   const NOT_FOUND = 404;
   // Insert routes below
+  app.use(requestLogger);
+  app.use(responseLogger);
+
   app.get('/api/health', (req, res) => res.json({ name, version }));
   app.use('/api/users', userRoute);
+
+
+  app.use(logger.transports.sentry.raven.errorHandler());
 
   // All undefined asset or api routes should rgit eturn a 404
   // eslint-disable-next-line no-unused-vars

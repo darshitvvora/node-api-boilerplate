@@ -6,6 +6,7 @@ const compression = require('compression');
 const cookieParser = require('cookie-parser');
 const responseTime = require('response-time');
 const helmet = require('helmet');
+const addRequestId = require('express-request-id')();
 
 // const db = require('../conn/sqldb');
 const config = require('./environment');
@@ -16,7 +17,7 @@ module.exports = (app) => {
   if (env === 'development' || env === 'test') {
     app.use(express.static(path.join(config.root, '.tmp')));
   }
-
+  app.use(addRequestId);
   app.use(helmet());
   app.use(responseTime());
   app.use(cors());

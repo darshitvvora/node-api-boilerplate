@@ -34,6 +34,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-request-id": "^1.4.1",
     "helmet": "^3.22.0",
     "lodash": "^4.17.15",
     "moment": "^2.26.0",
@@ -46,7 +47,8 @@
     "sequelize-cli": "^5.5.1",
     "winston": "^3.2.1",
     "winston-daily-rotate-file": "^4.4.2",
-    "winston-elasticsearch": "0.7.0"
+    "winston-elasticsearch": "0.7.0",
+    "winston-raven-sentry": "^1.0.1"
   },
   "devDependencies": {
     "apidoc": "^0.23.0",
