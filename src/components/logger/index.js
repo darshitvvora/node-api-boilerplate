@@ -19,15 +19,19 @@ const {
   ES_USER,
   ES_PASS,
   SENTRY_DSN,
+  ENABLE_ES,
+  ENABLE_SENTRY
 } = require('../../config/environment');
 
-const client = new Client({
-  node: ES_URL,
-  auth: {
-    username: ES_USER,
-    password: ES_PASS,
-  },
-});
+if(ENABLE_ES === 'true'){
+  const client = new Client({
+    node: ES_URL,
+    auth: {
+      username: ES_USER,
+      password: ES_PASS,
+    },
+  });
+}
 
 const logger = winston.createLogger({
   transports: [
@@ -39,15 +43,16 @@ const logger = winston.createLogger({
       silent: NODE_ENV === 'test',
     }),
     new Elasticsearch({
-      client: NODE_ENV === client,
+      client: NODE_ENV === 'production' && client,
       level: 'info',
-      silent: NODE_ENV === 'test',
+      silent: ENABLE_ES === 'false',
     }),
     new Sentry({
-      dsn: NODE_ENV === SENTRY_DSN,
+      dsn: NODE_ENV === 'production' && SENTRY_DSN,
       install: true,
       config: { environment: NODE_ENV, release: '@@_RELEASE_' },
       level: 'warn',
+      silent: ENABLE_SENTRY === 'false',
     }),
     new winston.transports.Console({
       name: 'console',
